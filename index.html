@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Geo Messendger</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="javascript" href="./js/bootstrap.min.js">
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<!-- <style>
+body {
+  background-image: url(images/B2.jpeg); /* Путь к фоновому изображению */
+  background-size: 100%;
+  background-color: #c7b39b; /* Цвет фона */
+ }
+</style> -->
+
+
+<body>
+<div align="center">
+<div class="container">
+    <div class="row">
+      <div class="col-md-2 col-md-offset-6"></div>
+     <div class="col-md-2 col-md-offset-6"></div>
+      <div class="col-md-4 col-md-offset-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Login with</h3>
+        </div>
+
+          <div class="panel-body">
+            <form accept-charset="UTF-8" role="form">
+            <fieldset>
+                <div class="form-group">
+                  <input id ="login" class="form-control" placeholder="Email / Login" type="text" required="type">
+              </div>
+              <div class="form-group">
+                <input id = "password" class="form-control" placeholder="Password" name="password" type="password" value="" required="type">
+                  <img id = "hidePassword" src="images/loginform_eyeOfPasswordVision.png"  weight="30px" height="30px"  >
+              </div>
+              <div>
+                <a href="registration.html" style="text-decoration:none;">Looking to create an account?</a>
+              </div>
+              <input id = "btnLogin" class="btn btn-lg btn-success btn-block" type="submit" value="Login">
+            </fieldset>
+            <h3>Maps preview</h3>
+
+            <div>
+              <a href="maps.html" style="text-decoration:none;">Map preview</a>
+            </div>
+              </form>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<style>
+
+    #login{
+
+        background: url("images/loginform_login.png")no-repeat 4px 4px ;
+        background-size: 28px;
+        padding-left:35px;
+    }
+
+    #password{
+
+        background: url("images/loginform_password.png")no-repeat 4px 4px ;
+        background-size: 28px;
+        padding-left:35px;
+    }
+
+
+
+
+</style>
+
+
+<script>
+
+    $(document).ready(function () {
+        document.getElementById("hidePassword").addEventListener("click", hidePassword, false);
+        document.getElementById("btnLogin").addEventListener("click", authorization, false);
+    });
+
+
+    function hidePassword () {
+  var pass = document.getElementById("password");
+  if(pass.type==="password"){ pass.type = "";}
+  else {pass.type ="password";}
+
+    }
+
+    function authorization() {
+       var login =  document.getElementById("login");
+        var password =  document.getElementById("password");
+
+            if(login.value==="" & password.value===""){
+                alert("Write Login and password!")}
+            else {alert("login"+" "+ login.value + " pasword "+password.value ) ;
+
+              /*  $.post("http://localhost:9090/FinalProject-master/UserServlet", {
+                        log: login.value,
+                        pass: password.value
+
+                    },
+
+                    function (data) {
+                    });*/
+            }
+
+    }
+</script>
+
+</body>
+</html>
